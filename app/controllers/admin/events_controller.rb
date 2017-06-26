@@ -1,7 +1,7 @@
 class Admin::EventsController < AdminController
 
   def index
-    @events = Event.all
+    @events = Event.rank(:row_order).all
   end
 
   def show
@@ -65,10 +65,21 @@ class Admin::EventsController < AdminController
     redirect_to admin_events_path
   end
 
+  def reorder
+    @event = Event.find_by_friendly_id!(params[:id])
+    @event.row_order_position = params[:position]
+    @event.save!
+
+    respond_to do |format|
+      format.html { redirect_to admin_events_path}
+      format.json { render :json => { :message => "ok"}}
+    end
+  end
+
   protected
 
   def event_params
-    params.require(:event).permit(:name, :description, :friendly_id, :status, :category_id, :tickets_attributes => [:id, :name, :description, :price, :_destroy])
+    params.require(:event).permit(:name, :logo, :remove_logo, :remove_images, :description, :friendly_id, :status, :category_id, :images => [], :tickets_attributes => [:id, :name, :description, :price, :_destroy])
   end
 
 end

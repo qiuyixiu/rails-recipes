@@ -23,6 +23,17 @@ gem "nested_form_fields"
 
 gem 'ckeditor'
 
+gem 'ranked-model'
+
+gem 'jquery-ui-rails'
+
+gem 'kaminari'
+
+gem 'ransack'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'bootstrap-datepicker-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
