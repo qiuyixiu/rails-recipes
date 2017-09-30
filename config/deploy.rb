@@ -9,7 +9,7 @@ set :repo_url, "git@github.com:qiuyixiu/rails-recipes.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, "/home/deploy/rails-recipes"
+set :deploy_to, "/home/ken/rails-recipes"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
