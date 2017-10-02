@@ -35,7 +35,8 @@ Rails.application.routes.draw do
     end
   end
 
-  root "events#index"
+  # root "events#index"
+  root "welcome#index"
 
   get "/faq" => "pages#faq"
 
